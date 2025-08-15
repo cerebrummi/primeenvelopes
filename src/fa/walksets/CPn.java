@@ -1,5 +1,6 @@
 package fa.walksets;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 
@@ -57,10 +58,25 @@ public class CPn implements Walkset
    {
       return list.getFirst();
    }
+   
+   public ArrayList<Symbol> getAllElements()
+   {
+      ArrayList<Symbol> copy = new ArrayList<>();
+      for(Symbol symbol : list)
+      {
+         copy.add(symbol);
+      }
+      return copy;
+   }
 
    @Override
    public String toString()
    {
       return "CPn = < " + Arrays.toString(list.toArray()) + " >";
+   }
+
+   public int getSize()
+   {
+      return list.size();
    }
 }

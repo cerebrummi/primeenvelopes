@@ -2,7 +2,7 @@ package common;
 
 public class StartFA
 {
-  final static int NUMBER_OF_STEPS = 11;
+  final static int NUMBER_OF_STEPS = 8;
   
    public static void main(String[] args)
    {

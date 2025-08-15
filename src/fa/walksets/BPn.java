@@ -27,6 +27,11 @@ public class BPn implements Walkset
    {
       return n == null;
    }
+   
+   public boolean isPrime()
+   {
+      return Symbol.P.equals(n);
+   }
 
    @Override
    public String toString()

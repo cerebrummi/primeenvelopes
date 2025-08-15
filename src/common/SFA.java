@@ -1,5 +1,8 @@
 package common;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import enums.Symbol;
 import fa.walksets.APn;
 import fa.walksets.An;
@@ -214,4 +217,36 @@ public class SFA
       return true;
    }
 
+   public int getLeftmostElementOfWalksetCn()
+   {
+      return walksetCn.getLeftmostElement();
+   }
+
+   public Integer getStepnumber()
+   {
+      return walksetBn.getN();
+   }
+
+   public HashMap<Integer, Symbol> getWalksetCnCPn()
+   {
+      HashMap<Integer, Symbol> map = new HashMap<>();
+      ArrayList<Symbol> cpn = walksetCPn.getAllElements();
+      int index = walksetCn.getLeftmostElement();
+      for(Symbol symbol : cpn)
+      {
+         map.put(index, symbol);
+         index++;
+      }
+      return map;
+   }
+   
+   public boolean isBPnPrime()
+   {
+      return walksetBPn.isPrime();
+   }
+
+   public int getCPnPatternSize()
+   {
+      return walksetCPn.getSize();
+   }
 }
