@@ -1,5 +1,7 @@
 package tree;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -8,11 +10,13 @@ public class Floor
    private HashMap<String, Leaf> leafs;
    private int stepnumber;
    private int patternSize;
+   private Floor previousFloor;
 
-   public Floor(int stepnumber, int patternSize)
+   public Floor(int stepnumber, int patternSize, Floor previousFloor)
    {
       this.stepnumber = stepnumber;
       this.patternSize = patternSize;
+      this.previousFloor = previousFloor;
       leafs = new HashMap<>();
    }
 
@@ -46,4 +50,25 @@ public class Floor
       }
    }
 
+   public Floor getPreviousFloor()
+   {
+      return previousFloor;
+   }
+   
+   public Integer getLeaf(BigDecimal prime)
+   {
+      BigDecimal leafsPatternSize = new BigDecimal(patternSize);
+      for(Leaf leaf : leafs.values())
+      {
+         BigDecimal leafHeadNumber = new BigDecimal(leaf.getHeadNumber());
+         BigDecimal result = prime.subtract(leafHeadNumber).remainder(leafsPatternSize);
+         if(BigDecimal.ZERO.equals(result))
+         {
+            return leaf.getHeadNumber();
+         }
+      }
+      System.err.println("This is not a prime number.");
+      System.exit(1);
+      return null;
+   }
 }

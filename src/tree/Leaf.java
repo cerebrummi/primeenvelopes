@@ -4,16 +4,19 @@ import enums.Symbol;
 
 public class Leaf implements Comparable<Leaf>
 {
-   private Symbol symbol;
-   private Leaf predecessor;
-   private Integer previousLeafHeadnumber;
-   private Integer headNumber;
-   private Leaf successor;
-   private Floor floor;
+   private final Symbol symbol;
+   private final Leaf predecessor;
+   private final Integer previousLeafHeadnumber;
+   private final Integer headNumber;
+   private final Floor floor;
 
    Leaf()
    {
-
+      this.symbol = null;
+      this.predecessor = new Leaf();
+      this.previousLeafHeadnumber = null;
+      this.headNumber = null;
+      this.floor = null;
    }
 
    public Leaf(Symbol symbol, Leaf predecessor, Integer previousLeafHeadnumber,
@@ -25,16 +28,6 @@ public class Leaf implements Comparable<Leaf>
       this.previousLeafHeadnumber = previousLeafHeadnumber;
       this.headNumber = headNumber;
       this.floor = floor;
-   }
-
-   public Leaf getSuccessor()
-   {
-      return successor;
-   }
-
-   public void setSuccessor(Leaf successor)
-   {
-      this.successor = successor;
    }
 
    public Symbol getSymbol()
