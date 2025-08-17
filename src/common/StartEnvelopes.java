@@ -2,7 +2,7 @@ package common;
 
 import java.math.BigDecimal;
 
-import io.PrimeReader;
+//import io.PrimeReader;
 import tree.Floor;
 
 public class StartEnvelopes
@@ -11,10 +11,13 @@ public class StartEnvelopes
 
    public static void main(String[] args)
    {
-      PrimeReader reader = new PrimeReader();
+      //PrimeReader reader = new PrimeReader();
       //String primenumber = reader.readFromData();
 
-      String primenumber = "82557089";//"19387777";
+      String primenumber = "19387777";  // "82557089" is a semiprime!!! 
+      //All numbers in L-columns (=envelopes) will be printed even if they are not prime
+      //numbers from M-columns are detected as not prime.
+      
       BigDecimal prime = new BigDecimal(primenumber);
 
       TFA tfa = new TFA();
