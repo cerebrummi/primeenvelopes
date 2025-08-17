@@ -2,6 +2,7 @@ package common;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.StringJoiner;
 
 import enums.Symbol;
 import fa.walksets.APn;
@@ -164,16 +165,19 @@ public class SFA
       }
    }
 
-   public void printWalksets()
+   public String toString()
    {
-      System.out.println(walksetAn);
-      System.out.println(walksetAPn);
-
-      System.out.println(walksetBn);
-      System.out.println(walksetBPn);
-
-      System.out.println(walksetCn);
-      System.out.println(walksetCPn);
+      StringJoiner joiner = new StringJoiner("\n");
+      joiner.add(walksetAn.toString());
+      joiner.add(walksetAPn.toString());
+      joiner.add("");
+      joiner.add(walksetBn.toString());
+      joiner.add(walksetBPn.toString());
+      joiner.add("");
+      joiner.add(walksetCn.toString());
+      joiner.add(walksetCPn.toString());
+      
+      return joiner.toString();
    }
 
    private boolean validateStartingState()

@@ -12,9 +12,9 @@ public class StartEnvelopes
    public static void main(String[] args)
    {
       PrimeReader reader = new PrimeReader();
-      String primenumber = reader.readFromData();
+      //String primenumber = reader.readFromData();
 
-      //String primenumber = "19387777";
+      String primenumber = "82557089";//"19387777";
       BigDecimal prime = new BigDecimal(primenumber);
 
       TFA tfa = new TFA();

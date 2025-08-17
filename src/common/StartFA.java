@@ -7,13 +7,13 @@ public class StartFA
    public static void main(String[] args)
    {
       SFA sfa = new SFA();
-      sfa.printWalksets();
+      sfa.toString();
       
       for( int i = 0 ; i < NUMBER_OF_STEPS; i++)
       {
          System.out.println("========== step start ==========");
          sfa.step();
-         sfa.printWalksets();
+         System.out.println(sfa.toString());
          System.out.println("========== step end ===========");
       }
    }
