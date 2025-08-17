@@ -47,7 +47,7 @@ public class StartEnvelopes
          BigDecimal size = new BigDecimal(patternSize);
          if (size.compareTo(prime) == 1)
          {
-            floor = floor.getPreviousFloor();
+            floor = tfa.getPreviousFloor(floor);
          }
          else
          {
@@ -65,7 +65,7 @@ public class StartEnvelopes
          int a = floor.getPatternSize();
          int b = floor.getLeaf(prime).intValue();
          System.out.println("Envelope equation f(x) = " + a + "*x + " + b);
-         floor = floor.getPreviousFloor();
+         floor = tfa.getPreviousFloor(floor);
       } while (floor != null);
    }
 

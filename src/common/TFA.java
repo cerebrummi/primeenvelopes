@@ -32,7 +32,7 @@ public class TFA
    private Leaf stepProducesRootLeaf()
    {
       sfa.step();
-      floors.add(new Floor(sfa.getStepnumber(), sfa.getCPnPatternSize(), null));
+      floors.add(new Floor(sfa.getStepnumber(), sfa.getCPnPatternSize()));
       Leaf leaf = new Leaf(Symbol.L, 
                           null, 
                           sfa.getLeftmostElementOfWalksetCn(),
@@ -51,7 +51,7 @@ public class TFA
       }
       
       Floor previousFloor = floors.getLast();
-      Floor floor = new Floor(sfa.getStepnumber(), sfa.getCPnPatternSize(), previousFloor);
+      Floor floor = new Floor(sfa.getStepnumber(), sfa.getCPnPatternSize());
       floors.add(floor);
       
       HashMap<Integer, Symbol> walksetsCnCPn = sfa.getWalksetCnCPn();
@@ -107,5 +107,16 @@ public class TFA
    public Floor getLastFloor()
    {
       return floors.getLast();
+   }
+   
+   public Floor getPreviousFloor(Floor currentFloor)
+   {
+      int index = floors.indexOf(currentFloor);
+      index--;
+      if(index < 0)
+      {
+         return null;
+      }
+      return floors.get(index);
    }
 }

@@ -10,13 +10,11 @@ public class Floor
    private final HashMap<String, Leaf> leafs;
    private final int stepnumber;
    private final int patternSize;
-   private final Floor previousFloor;
 
-   public Floor(int stepnumber, int patternSize, Floor previousFloor)
+   public Floor(int stepnumber, int patternSize)
    {
       this.stepnumber = stepnumber;
       this.patternSize = patternSize;
-      this.previousFloor = previousFloor;
       leafs = new HashMap<>();
    }
 
@@ -50,11 +48,6 @@ public class Floor
          joiner.add(leaf.toString());
       }
       return joiner.toString();
-   }
-
-   public Floor getPreviousFloor()
-   {
-      return previousFloor;
    }
    
    public Integer getLeaf(BigDecimal prime)
