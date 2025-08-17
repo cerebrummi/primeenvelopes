@@ -3,6 +3,7 @@ package common;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
+import java.util.StringJoiner;
 
 import enums.Symbol;
 import tree.Floor;
@@ -91,23 +92,17 @@ public class TFA
       return rootLeaf;
    }
 
-   public void printFloors()
+   public String toString()
    {
+      StringJoiner joiner = new StringJoiner("\n");
       for(Floor floor : floors)
       {
-         System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>> floor start n = " + floor.getStepnumber());
-         floor.printLeafs();
-         System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>> floor end n = " + floor.getStepnumber());
+         joiner.add(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>> floor start n = " + floor.getStepnumber());
+         joiner.add("|                              pattern size = " + floor.getPatternSize());
+         joiner.add(floor.toString());
+         joiner.add(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>> floor end n = " + floor.getStepnumber());
       }
-      
-   }
-
-   public void printPatternSizes()
-   {
-      for(Floor floor : floors)
-      {
-         System.out.println("TFA: patternsize " + floor.getPatternSize());
-      }
+      return joiner.toString();
    }
    
    public Floor getLastFloor()

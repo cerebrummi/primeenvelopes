@@ -1,5 +1,7 @@
 package tree;
 
+import java.util.StringJoiner;
+
 import enums.Symbol;
 
 public class Leaf implements Comparable<Leaf>
@@ -61,12 +63,13 @@ public class Leaf implements Comparable<Leaf>
       return headNumber.compareTo(o.getHeadNumber());
    }
 
-   public void print()
+   public String toString()
    {
-      System.out.println(" ------ Leaf start ------ ");
-      System.out.println("" + previousLeafHeadnumber);
-      System.out.println("");
-      System.out.println("" + headNumber);
-      System.out.println(" ------ Leaf end ------- ");
+      StringJoiner joiner = new StringJoiner("\n");
+      joiner.add(" ------ Leaf start ------ ");
+      joiner.add("|  " + previousLeafHeadnumber);
+      joiner.add("|  " + headNumber);
+      joiner.add(" ------ Leaf end ------- ");
+      return joiner.toString();
    }
 }

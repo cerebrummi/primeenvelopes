@@ -2,7 +2,7 @@ package common;
 
 public class StartTree
 {
-   final static int NUMBER_OF_STEPS = 12;
+   final static int NUMBER_OF_STEPS = 5;
 
    public static void main(String[] args)
    {
@@ -13,7 +13,7 @@ public class StartTree
          tfa.step();
       }
 
-      // tfa.printFloors();
+      System.out.println(tfa.toString());
 
       /**
        * for NUMBER_OF_STEPS = 17
@@ -27,6 +27,5 @@ public class StartTree
        * TFA: patternsize 30030 
        * TFA: patternsize 510510
        */
-      tfa.printPatternSizes();
    }
 }

@@ -3,6 +3,7 @@ package tree;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.StringJoiner;
 
 public class Floor
 {
@@ -39,14 +40,16 @@ public class Floor
       return patternSize;
    }
 
-   public void printLeafs()
+   public String toString()
    {
+      StringJoiner joiner = new StringJoiner("\n");
       ArrayList<Leaf> sortedLeafs = new ArrayList<>(leafs.values());
       sortedLeafs.sort(null);
       for (Leaf leaf : sortedLeafs)
       {
-         leaf.print();
+         joiner.add(leaf.toString());
       }
+      return joiner.toString();
    }
 
    public Floor getPreviousFloor()
