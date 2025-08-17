@@ -7,10 +7,10 @@ import java.util.StringJoiner;
 
 public class Floor
 {
-   private HashMap<String, Leaf> leafs;
-   private int stepnumber;
-   private int patternSize;
-   private Floor previousFloor;
+   private final HashMap<String, Leaf> leafs;
+   private final int stepnumber;
+   private final int patternSize;
+   private final Floor previousFloor;
 
    public Floor(int stepnumber, int patternSize, Floor previousFloor)
    {

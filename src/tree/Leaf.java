@@ -12,15 +12,6 @@ public class Leaf implements Comparable<Leaf>
    private final Integer headNumber;
    private final Floor floor;
 
-   Leaf()
-   {
-      this.symbol = null;
-      this.predecessor = new Leaf();
-      this.previousLeafHeadnumber = null;
-      this.headNumber = null;
-      this.floor = null;
-   }
-
    public Leaf(Symbol symbol, Leaf predecessor, Integer previousLeafHeadnumber,
          Integer headNumber, Floor floor)
    {

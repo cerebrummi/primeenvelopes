@@ -19,26 +19,27 @@ import tree.Leaf;
  */
 public class TFA
 {
-   private SFA sfa;
-   private Leaf rootLeaf;
-   private ArrayList<Floor> floors = new ArrayList<>();
+   private final SFA sfa;
+   private final Leaf rootLeaf;
+   private final ArrayList<Floor> floors = new ArrayList<>();
 
    public TFA()
    {
       this.sfa = new SFA();
-      stepProducesRootLeaf();
+      rootLeaf = stepProducesRootLeaf();
    }
 
-   private void stepProducesRootLeaf()
+   private Leaf stepProducesRootLeaf()
    {
       sfa.step();
       floors.add(new Floor(sfa.getStepnumber(), sfa.getCPnPatternSize(), null));
-      rootLeaf = new Leaf(Symbol.L, 
+      Leaf leaf = new Leaf(Symbol.L, 
                           null, 
                           sfa.getStepnumber(),
                           sfa.getLeftmostElementOfWalksetCn(),
                           floors.getFirst());
-      floors.getFirst().addLeaf(rootLeaf);
+      floors.getFirst().addLeaf(leaf);
+      return leaf;
    }
 
    public void step()
