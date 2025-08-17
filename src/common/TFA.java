@@ -35,7 +35,6 @@ public class TFA
       floors.add(new Floor(sfa.getStepnumber(), sfa.getCPnPatternSize(), null));
       Leaf leaf = new Leaf(Symbol.L, 
                           null, 
-                          sfa.getStepnumber(),
                           sfa.getLeftmostElementOfWalksetCn(),
                           floors.getFirst());
       floors.getFirst().addLeaf(leaf);
@@ -79,7 +78,6 @@ public class TFA
            
             Leaf leaf = new Leaf(Symbol.L, 
                   previousLeaf, 
-                  headNumberOfPreviousLeaf,
                   headnumber,
                   floor);
             

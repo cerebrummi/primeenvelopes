@@ -23,12 +23,12 @@ public class StartEnvelopes
 
    public static void main(String[] args)
    {
-      //PrimeReader reader = new PrimeReader();
-      //String primenumber = reader.readFromData();
+      // PrimeReader reader = new PrimeReader();
+      // String primenumber = reader.readFromData();
 
       String primenumber = "19387777";  // "82557089" is a semiprime!!! 
-      //All numbers in L-columns (=envelopes) will be printed even if they are not prime
-      //numbers from M-columns are detected as not prime.
+      // All numbers in L-columns (=envelopes) will be printed even if they are not prime
+      // numbers from M-columns are detected as not prime.
       
       BigDecimal prime = new BigDecimal(primenumber);
 

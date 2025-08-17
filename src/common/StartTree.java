@@ -2,7 +2,7 @@ package common;
 
 public class StartTree
 {
-   final static int NUMBER_OF_STEPS = 5;
+   final static int NUMBER_OF_STEPS = 8;
 
    public static void main(String[] args)
    {
