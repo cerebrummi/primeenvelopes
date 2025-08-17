@@ -26,7 +26,7 @@ public class StartEnvelopes
       // PrimeReader reader = new PrimeReader();
       // String primenumber = reader.readFromData();
 
-      String primenumber = "19387777";  // "82557089" is a semiprime!!! 
+      String primenumber = "193877777";  // "82557089" is a semiprime!!! 
       // All numbers in L-columns (=envelopes) will be printed even if they are not prime
       // numbers from M-columns are detected as not prime.
       
