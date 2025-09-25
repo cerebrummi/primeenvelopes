@@ -26,7 +26,7 @@ public class StartEnvelopes
       // PrimeReader reader = new PrimeReader();
       // String primenumber = reader.readFromData();
 
-      String primenumber = "193877777";  // "82557089" is a semiprime!!! 
+      String primenumber = "2"; //"82557089";  // "193877777" is a semiprime!!! 
       // All numbers in L-columns (=envelopes) will be printed even if they are not prime
       // numbers from M-columns are detected as not prime.
       
@@ -45,7 +45,7 @@ public class StartEnvelopes
       {
          int patternSize = floor.getPatternSize();
          BigDecimal size = new BigDecimal(patternSize);
-         if (size.compareTo(prime) == 1)
+         if (size.compareTo(prime) == 1 || size.compareTo(prime) == 0)
          {
             floor = tfa.getPreviousFloor(floor);
          }
